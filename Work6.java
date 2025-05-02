@@ -1,26 +1,31 @@
-// Write a method to calculate the compound interest given principal, rate, and time
+// Create a method to check whether a given number is a palindrome prime
 import java.util.Scanner;
 public class Work6 {
-    public static void compoundInterest(double p,double t, double r){
-        double ans=Math.pow((1+(r/100)), t);
-        double amount=p*ans;
-        
-        double interest=amount-p;
-        System.out.println("The compound interest is "+ interest);
-    }
+    public static void palPrime(int num){
+        int ogNum=num,rev=0, count=0;
+        while(num!=0){
+            int dig=num%10;
+            rev=rev*10+dig;
+            num=num/10;
+        }
+        for(int i=1;i<=ogNum;i++){
+            if (ogNum%i==0){
+                count++;
+            }
 
+        }
+        if (ogNum==rev && count==2 && ogNum!=1){
+            System.out.println("it is palindrome and prime");
+        }else{
+            System.out.println("not palindrome prime");
+        }
+    } 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter a principle");
-        double principle=sc.nextDouble();
-        
-        System.out.println("Enter a rate");
-        double rate=sc.nextDouble();
-        
-        System.out.println("Enter a time in years");
-        double time=sc.nextDouble();
-        
-        compoundInterest(principle, time, rate);
+        System.out.println("Enter a number");
+        int num=sc.nextInt();
+        palPrime(num);
         sc.close();
     }
+    
 }

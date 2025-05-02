@@ -1,19 +1,20 @@
-// Create a method to find the sum of the first n natural numbers
+// Write a method to print all factors of a number
 import java.util.Scanner;
 public class Work10 {
-    public static int sumOfNaturalNo(int num){
-        int sum=0;
-        for (int i=1;i<=num;i++){
-            sum=sum+i;
+    public static void fac(int num){
+        System.out.println("The Factors of "+num+" are:");
+        for(int i=1;i<=num;i++){
+            if (num%i==0){
+                System.out.print(i+",");
+            }
         }
-        return sum;
     }
     public static void main(String[] args) {
-        System.out.println("Enter a number n till where you want sum");
         Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number");
         int num=sc.nextInt();
+        fac(num);;
         sc.close();
-        int ans=sumOfNaturalNo(num);
-        System.out.println("sum of natural number till is "+ans);
     }
+    
 }

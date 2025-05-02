@@ -1,12 +1,11 @@
-// Write a method to swap two numbers using a temporary variable
+// Write a method to swap two numbers without using a temporary variable
 import java.util.Scanner;
 public class Work8 {
     public static void swap(int num1,int num2){
     System.out.println("Before swap: num1 = " + num1 + ", num2 = " + num2);
-    int temp;
-    temp=num1;
-    num1=num2;
-    num2=temp;
+    num1=num1^num2;
+    num2=num2^num1;
+    num1=num1^num2;
     System.out.println("After swap: num1 = " + num1 + ", num2 = " + num2);
     }
     public static void main(String[] args) {

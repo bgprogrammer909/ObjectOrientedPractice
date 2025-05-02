@@ -1,30 +1,23 @@
-// Create a method to check whether a given number is a palindrome prime
+// Write a method to swap two numbers using a temporary variable
 import java.util.Scanner;
 public class Work7 {
-    public static void palPrime(int num){
-        int ogNum=num,rev=0, count=0;
-        while(num!=0){
-            int dig=num%10;
-            rev=rev*10+dig;
-            num=num/10;
-        }
-        for(int i=1;i<=ogNum;i++){
-            if (ogNum%i==0){
-                count++;
-            }
-
-        }
-        if (ogNum==rev && count==2 && ogNum!=1){
-            System.out.println("it is palindrome and prime");
-        }else{
-            System.out.println("not palindrome prime");
-        }
-    } 
+    public static void swap(int num1,int num2){
+    System.out.println("Before swap: num1 = " + num1 + ", num2 = " + num2);
+    int temp;
+    temp=num1;
+    num1=num2;
+    num2=temp;
+    System.out.println("After swap: num1 = " + num1 + ", num2 = " + num2);
+    }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter a number");
-        int num=sc.nextInt();
-        palPrime(num);
+        int num1=sc.nextInt();
+
+        System.out.println("Enter another number");
+        int num2=sc.nextInt();
+        
+        swap(num1,num2);
         sc.close();
     }
     

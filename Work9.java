@@ -1,23 +1,19 @@
-// Write a method to swap two numbers without using a temporary variable
+// Create a method to find the sum of the first n natural numbers
 import java.util.Scanner;
 public class Work9 {
-    public static void swap(int num1,int num2){
-    System.out.println("Before swap: num1 = " + num1 + ", num2 = " + num2);
-    num1=num1^num2;
-    num2=num2^num1;
-    num1=num1^num2;
-    System.out.println("After swap: num1 = " + num1 + ", num2 = " + num2);
+    public static int sumOfNaturalNo(int num){
+        int sum=0;
+        for (int i=1;i<=num;i++){
+            sum=sum+i;
+        }
+        return sum;
     }
     public static void main(String[] args) {
+        System.out.println("Enter a number n till where you want sum");
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter a number");
-        int num1=sc.nextInt();
-
-        System.out.println("Enter another number");
-        int num2=sc.nextInt();
-        
-        swap(num1,num2);
+        int num=sc.nextInt();
         sc.close();
+        int ans=sumOfNaturalNo(num);
+        System.out.println("sum of natural number till is "+ans);
     }
-    
 }
