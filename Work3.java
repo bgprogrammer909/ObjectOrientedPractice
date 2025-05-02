@@ -21,5 +21,6 @@ public class Work3 {
         System.out.println("Enter a number");
         int num=sc.nextInt();
         harshad(num);
+        sc.close();
     }
 }
